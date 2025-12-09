@@ -2,14 +2,14 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from '../types';
 
 // Import assets from src
-import oryonAiImage from './oryonai.png'; // Pastikan path dan nama file sudah benar
-import oryonWebImage from './oryonweb.png'; // Pastikan path dan nama file sudah benar
-import portfolioV1Image from './portfoliov1.png'; // Pastikan path dan nama file sudah benar
-import sakukuImage from './sakukupics.png'; // Impor gambar Sakuku
-import dicodingLogo from './dicodinglogo.jpg'; // Impor logo Dicoding
-import sertifikat1 from './sertifikat1.png'; // Impor gambar sertifikat
-import leskofiLogo from './logoleskofi.webp'; // Impor logo Leskofi
-import sertifikat2 from './sertifikat2.jpg'; // Impor gambar sertifikat
+const oryonAiImage = new URL('./oryonai.png', import.meta.url).href; // Pastikan path dan nama file sudah benar
+const oryonWebImage = new URL('./oryonweb.png', import.meta.url).href; // Pastikan path dan nama file sudah benar
+const portfolioV1Image = new URL('./portfoliov1.png', import.meta.url).href; // Pastikan path dan nama file sudah benar
+const sakukuImage = new URL('./sakukupics.png', import.meta.url).href; // Impor gambar Sakuku
+const dicodingLogo = new URL('./dicodinglogo.jpg', import.meta.url).href; // Impor logo Dicoding
+const sertifikat1 = new URL('./sertifikat1.png', import.meta.url).href; // Impor gambar sertifikat
+const leskofiLogo = new URL('./logoleskofi.webp', import.meta.url).href; // Impor logo Leskofi
+const sertifikat2 = new URL('./sertifikat2.jpg', import.meta.url).href; // Impor gambar sertifikat
 
 export const MOTTO_TEXT: string[] = [
   "DIGITAL CRAFTER",
