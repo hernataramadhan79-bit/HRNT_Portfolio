@@ -2,10 +2,14 @@ import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from './types';
 
 // Import assets from src
-import oryonAiImage from '/src/Oryon AI Pics.png';
-import oryonWebImage from '/src/Oryonwebpics.png';
-import portfolioV1Image from '/src/PortfolioV1.png';
-import profileImage from '/src/profile.jpg';
+import oryonAiImage from '/src/Oryon AI Pics.png'; // Pastikan path dan nama file sudah benar
+import oryonWebImage from '/src/Oryonwebpics.png'; // Pastikan path dan nama file sudah benar
+import portfolioV1Image from '/src/PortfolioV1.png'; // Pastikan path dan nama file sudah benar
+import sakukuImage from '/src/sakukupics.png'; // Impor gambar Sakuku
+import dicodingLogo from '/src/dicodinglogo.jpg'; // Impor logo Dicoding
+import sertifikat1 from '/src/sertifikat1.png'; // Impor gambar sertifikat
+import leskofiLogo from '/src/logoleskofi.webp'; // Impor logo Leskofi
+import sertifikat2 from '/src/sertifikat2.jpg'; // Impor gambar sertifikat
 
 export const MOTTO_TEXT: string[] = [
   "DIGITAL CRAFTER",
@@ -49,7 +53,7 @@ const PROJECTS: Project[] = [
     title: "Sakuku Wallet",
     category: "Web App",
     description: "For manage your wallet.",
-    image: "/src/sakukupics.png",
+    image: sakukuImage,
     tech: ["React", "Vite"],
     link: "https://sakuku-wallet.vercel.app/",
     span: "md:col-span-1"
@@ -73,9 +77,9 @@ const CERTIFICATES: Certificate[] = [
     type: 'certificate',
     title: 'Belajar Fundamental Front-End Web Development',
     issuer: 'Dicoding',
-    description: 'Mastering the fundamentals of front-end web development, including HTML, CSS, JavaScript, and modern frameworks.',
-    image: '/src/dicodinglogo.jpg',
-    certificateImage: '/src/sertifikat1.png', // Image for the modal
+    description: 'Mastering fundamentals of front-end web development, including HTML, CSS, JavaScript, and modern frameworks.',
+    image: dicodingLogo,
+    certificateImage: sertifikat1, // Image for the modal
     link: '#', // Add actual link to certificate
     year: 2025,
     span: 'md:col-span-1',
@@ -86,8 +90,8 @@ const CERTIFICATES: Certificate[] = [
     title: 'Photoghapy Mastery',
     issuer: 'LESKOFI',
     description: 'Mastering the art and technique of photography, from composition and lighting to post-processing.',
-    image: '/src/logoleskofi.webp', // Placeholder
-    certificateImage: '/src/sertifikat2.jpg', // Placeholder for modal
+    image: leskofiLogo,
+    certificateImage: sertifikat2,
     link: '#',
     year: 2024,
     span: 'md:col-span-1',
