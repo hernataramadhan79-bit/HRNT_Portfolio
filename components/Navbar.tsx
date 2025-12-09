@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
-import { NAV_ITEMS } from '../constants'; // Pastikan path benar
+import { NAV_ITEMS } from '../src/constants'; // Pastikan path benar
 import { Menu, X, Send } from 'lucide-react';
 
 interface NavbarProps {

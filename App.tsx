@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import GlobalAnimatedBackground from './components/GlobalAnimatedBackground';
 import Cursor from './components/ui/Cursor';
 import SectionInView from './components/SectionInView';
-import { NAV_ITEMS } from './constants';
+import { NAV_ITEMS } from './src/constants';
 import { useParticles } from './hooks/useParticles';
 import ParticleBackground from './components/ui/ParticleBackground';
 import ImageModal from './components/ui/ImageModal';

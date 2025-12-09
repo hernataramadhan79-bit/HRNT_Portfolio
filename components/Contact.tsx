@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useIsomorphicLayoutEffect } from 'framer-motion';
-import { SOCIALS } from '../constants';
+import { SOCIALS } from '../src/constants';
 import { ArrowUpRight, Copy } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 

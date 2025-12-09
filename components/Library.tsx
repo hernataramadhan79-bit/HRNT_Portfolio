@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LIBRARY_ITEMS } from '../constants';
+import { LIBRARY_ITEMS } from '../src/constants';
 import LibraryCard from './ui/LibraryCard';
 import { LibraryItem } from '../types';
 

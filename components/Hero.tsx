@@ -3,7 +3,7 @@ import { motion, Variants, useAnimation } from 'framer-motion';
 import { Play, Pause, ArrowDown } from 'lucide-react';
 import MagneticButton from './ui/MagneticButton';
 import GlitchText from './ui/GlitchText';
-import { MOTTO_TEXT } from '../constants';
+import { MOTTO_TEXT } from '../src/constants';
 import GlobalAnimatedBackground from './GlobalAnimatedBackground';
 import backgroundMusic from '../background-music.mp3';
 
