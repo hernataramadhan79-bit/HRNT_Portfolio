@@ -7,8 +7,7 @@ const GlobalAnimatedBackground: React.FC = () => {
   // Membuat efek parallax "terhempas": Latar belakang akan bergerak ke atas saat scroll ke bawah.
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  // Membuat efek gelap: Opasitas gradien gelap akan meningkat saat scroll ke bawah (dihapus sesuai permintaan sebelumnya)
-  const darknessOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0.5, 0.9]);
+  
 
   return (
     <>

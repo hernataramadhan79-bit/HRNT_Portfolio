@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, MotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Particle } from '../../hooks/useParticles';
 
 interface ParticleBackgroundProps {

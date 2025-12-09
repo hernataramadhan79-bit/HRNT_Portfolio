@@ -40,7 +40,6 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
 
   const projects = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'project'), []);
   const certificates = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'certificate'), []);
-  const achievements = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'achievement'), []);
   
   return (
     <section id="library" className="py-32 relative z-10">

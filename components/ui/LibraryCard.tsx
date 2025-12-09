@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, Variants, useIsomorphicLayoutEffect } from 'framer-motion';
 import { ArrowUpRight, Award, FileText as CertificateIcon } from 'lucide-react';
-import { LibraryItem, Certificate } from '../types';
+import { LibraryItem, Certificate } from '../../types';
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -27,7 +27,7 @@ interface LibraryCardProps {
 }
 
 const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
-  const divRef = useRef<HTMLDivElement>(null);
+  const anchorRef = useRef<HTMLAnchorElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -39,10 +39,10 @@ const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
     return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!isDesktop) return;
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
+    if (!anchorRef.current) return;
+    const rect = anchorRef.current.getBoundingClientRect();
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     setOpacity(1);
   };
@@ -54,7 +54,7 @@ const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
 
   const isCertificateWithImage = item.type === 'certificate' && (item as Certificate).certificateImage;
   
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isCertificateWithImage) {
       e.preventDefault();
       onCardClick(item);
@@ -95,7 +95,7 @@ const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
       href={link}
       target={isCertificateWithImage ? '_self' : '_blank'}
       rel="noopener noreferrer"
-      ref={divRef}
+      ref={anchorRef}
       onClick={handleClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

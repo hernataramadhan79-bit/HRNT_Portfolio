@@ -5,6 +5,7 @@ import MagneticButton from './ui/MagneticButton';
 import GlitchText from './ui/GlitchText';
 import { MOTTO_TEXT } from '../constants';
 import GlobalAnimatedBackground from './GlobalAnimatedBackground';
+import backgroundMusic from '../src/background-music.mp3';
 
 const Hero: React.FC = () => {
   const letterControls = useAnimation();
@@ -36,29 +37,29 @@ const Hero: React.FC = () => {
 
   // --- Music Controls ---
   const fadeOut = (onComplete?: () => void) => {
-    if (fadeIntervalRef.current) clearInterval(fadeIntervalRef.current);
-    fadeIntervalRef.current = setInterval(() => {
+    if (fadeIntervalRef.current) window.clearInterval(fadeIntervalRef.current);
+    fadeIntervalRef.current = window.setInterval(() => {
       if (audioRef.current && audioRef.current.volume > 0.05) {
         audioRef.current.volume = Math.max(0, audioRef.current.volume - 0.05);
       } else if (audioRef.current) {
         audioRef.current.volume = 0;
-        if (fadeIntervalRef.current) clearInterval(fadeIntervalRef.current);
+        if (fadeIntervalRef.current) window.clearInterval(fadeIntervalRef.current);
         if (onComplete) onComplete();
       }
     }, 50);
   };
 
   const fadeIn = () => {
-    if (fadeIntervalRef.current) clearInterval(fadeIntervalRef.current);
+    if (fadeIntervalRef.current) window.clearInterval(fadeIntervalRef.current);
     if (audioRef.current && audioRef.current.paused) {
       audioRef.current.play().catch(e => console.error("Audio play failed:", e));
     }
-    fadeIntervalRef.current = setInterval(() => {
+    fadeIntervalRef.current = window.setInterval(() => {
       if (audioRef.current && audioRef.current.volume < 0.95) {
         audioRef.current.volume = Math.min(1, audioRef.current.volume + 0.05);
       } else if (audioRef.current) {
         audioRef.current.volume = 1;
-        if (fadeIntervalRef.current) clearInterval(fadeIntervalRef.current);
+        if (fadeIntervalRef.current) window.clearInterval(fadeIntervalRef.current);
       }
     }, 50);
   };
@@ -115,7 +116,7 @@ const Hero: React.FC = () => {
     >
       <GlobalAnimatedBackground />
       
-      <audio ref={audioRef} src="/src/background-music.mp3" loop preload="auto" />
+      <audio ref={audioRef} src={backgroundMusic} loop preload="auto" />
       
       {/* Main Content Grid */}
       <motion.div 

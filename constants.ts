@@ -1,15 +1,15 @@
-import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
 import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from './types';
 
 // Import assets from src
-import oryonAiImage from '/src/Oryon AI Pics.png'; // Pastikan path dan nama file sudah benar
-import oryonWebImage from '/src/Oryonwebpics.png'; // Pastikan path dan nama file sudah benar
-import portfolioV1Image from '/src/PortfolioV1.png'; // Pastikan path dan nama file sudah benar
-import sakukuImage from '/src/sakukupics.png'; // Impor gambar Sakuku
-import dicodingLogo from '/src/dicodinglogo.jpg'; // Impor logo Dicoding
-import sertifikat1 from '/src/sertifikat1.png'; // Impor gambar sertifikat
-import leskofiLogo from '/src/logoleskofi.webp'; // Impor logo Leskofi
-import sertifikat2 from '/src/sertifikat2.jpg'; // Impor gambar sertifikat
+import oryonAiImage from './src/Oryon AI Pics.png'; // Pastikan path dan nama file sudah benar
+import oryonWebImage from './src/Oryonwebpics.png'; // Pastikan path dan nama file sudah benar
+import portfolioV1Image from './src/PortfolioV1.png'; // Pastikan path dan nama file sudah benar
+import sakukuImage from './src/sakukupics.png'; // Impor gambar Sakuku
+import dicodingLogo from './src/dicodinglogo.jpg'; // Impor logo Dicoding
+import sertifikat1 from './src/sertifikat1.png'; // Impor gambar sertifikat
+import leskofiLogo from './src/logoleskofi.webp'; // Impor logo Leskofi
+import sertifikat2 from './src/sertifikat2.jpg'; // Impor gambar sertifikat
 
 export const MOTTO_TEXT: string[] = [
   "DIGITAL CRAFTER",

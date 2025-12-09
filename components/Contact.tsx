@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useIsomorphicLayoutEffect } from 'framer-motion';
 import { SOCIALS } from '../constants';
 import { ArrowUpRight, Copy } from 'lucide-react';
