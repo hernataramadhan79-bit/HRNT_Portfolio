@@ -5,7 +5,7 @@ import MagneticButton from './ui/MagneticButton';
 import GlitchText from './ui/GlitchText';
 import { MOTTO_TEXT } from '../src/constants';
 import GlobalAnimatedBackground from './GlobalAnimatedBackground';
-import backgroundMusic from '../background-music.mp3';
+const backgroundMusic = new URL('../src/background-music.mp3', import.meta.url).href;
 
 const Hero: React.FC = () => {
   const letterControls = useAnimation();
