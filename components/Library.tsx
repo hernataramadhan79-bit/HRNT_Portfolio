@@ -40,6 +40,7 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
 
   const projects = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'project'), []);
   const certificates = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'certificate'), []);
+  const achievements = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'achievement'), []);
   
   return (
     <section id="library" className="py-32 relative z-10">
@@ -86,19 +87,7 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
             <motion.div key="all-sections">
               <Section title="Projects" items={projects} onCardClick={onCardClick} />
               <Section title="Certificates" items={certificates} onCardClick={onCardClick} />
-              <motion.div
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="mb-16"
-              >
-                <h3 className="text-2xl font-bold font-syne mb-8 border-b border-cyan-400/20 pb-4">Achievements</h3>
-                <div className="text-center py-16 text-gray-500 font-mono">
-                  Coming Soon...
-                </div>
-              </motion.div>
+              <Section title="Achievements" items={achievements} onCardClick={onCardClick} />
             </motion.div>
           )}
           {activeFilter === 'project' && (
@@ -116,18 +105,10 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
             </motion.div>
           )}
           {activeFilter === 'achievement' && (
-            <motion.div
-              key="achievements-coming-soon"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-full"
-            >
-              <div className="text-center py-32 text-gray-500 font-mono text-2xl">
-                Coming Soon...
-              </div>
+            <motion.div key="achievements" layout className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {achievements.map((item) => (
+                <LibraryCard key={item.id} item={item} onCardClick={onCardClick} />
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
