@@ -2,14 +2,14 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from './types';
 
 // Import assets from src
-import oryonAiImage from './src/oryonai.png'; // Pastikan path dan nama file sudah benar
-import oryonWebImage from './src/Oryonwebpics.png'; // Pastikan path dan nama file sudah benar
-import portfolioV1Image from './src/PortfolioV1.png'; // Pastikan path dan nama file sudah benar
-import sakukuImage from './src/sakukupics.png'; // Impor gambar Sakuku
-import dicodingLogo from './src/dicodinglogo.jpg'; // Impor logo Dicoding
-import sertifikat1 from './src/sertifikat1.png'; // Impor gambar sertifikat
-import leskofiLogo from './src/logoleskofi.webp'; // Impor logo Leskofi
-import sertifikat2 from './src/sertifikat2.jpg'; // Impor gambar sertifikat
+import oryonAiImage from './oryonai.png'; // Pastikan path dan nama file sudah benar
+import oryonWebImage from './Oryonwebpics.png'; // Pastikan path dan nama file sudah benar
+import portfolioV1Image from './PortfolioV1.png'; // Pastikan path dan nama file sudah benar
+import sakukuImage from './sakukupics.png'; // Impor gambar Sakuku
+import dicodingLogo from './dicodinglogo.jpg'; // Impor logo Dicoding
+import sertifikat1 from './sertifikat1.png'; // Impor gambar sertifikat
+import leskofiLogo from './logoleskofi.webp'; // Impor logo Leskofi
+import sertifikat2 from './sertifikat2.jpg'; // Impor gambar sertifikat
 
 export const MOTTO_TEXT: string[] = [
   "DIGITAL CRAFTER",

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useIsomorphicLayoutEffect } from 'framer-motion';
 
 // 1. Impor gambar profil Anda dari folder assets
-import profileImage from '../src/profile.jpg'; // <-- Ganti 'profile.jpg' dengan nama file Anda
+import profileImage from '../profile.jpg'; // <-- Ganti 'profile.jpg' dengan nama file Anda
 
 const About: React.FC = () => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
