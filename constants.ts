@@ -3,8 +3,8 @@ import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } f
 
 // Import assets from src
 import oryonAiImage from './src/oryonai.png'; // Pastikan path dan nama file sudah benar
-import oryonWebImage from './src/oryonweb.png'; // Pastikan path dan nama file sudah benar
-import portfolioV1Image from './src/portfoliov1.png'; // Pastikan path dan nama file sudah benar
+import oryonWebImage from './src/Oryonwebpics.png'; // Pastikan path dan nama file sudah benar
+import portfolioV1Image from './src/PortfolioV1.png'; // Pastikan path dan nama file sudah benar
 import sakukuImage from './src/sakukupics.png'; // Impor gambar Sakuku
 import dicodingLogo from './src/dicodinglogo.jpg'; // Impor logo Dicoding
 import sertifikat1 from './src/sertifikat1.png'; // Impor gambar sertifikat
