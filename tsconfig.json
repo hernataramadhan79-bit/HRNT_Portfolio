@@ -14,9 +14,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "types": ["node"]
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["src", "vite-env.d.ts", "constants.ts", "types.ts", "App.tsx", "index.tsx", "postcss.config.js", "tailwind.config.js", "vite.config.ts"],
   "exclude": ["node_modules"]
 }
