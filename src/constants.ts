@@ -1,5 +1,5 @@
 import { Github, Linkedin, Instagram } from 'lucide-react';
-import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from './types';
+import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from '../types';
 
 // Import assets from src
 import oryonAiImage from './oryonai.png'; // Pastikan path dan nama file sudah benar
