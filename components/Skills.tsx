@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SKILLS, SKILLS_DETAILED } from '../src/constants';
 
 const Skills: React.FC = () => {
+  const reversedSkills = [...SKILLS].reverse();
   return (
     <section id="skills" className="py-32 border-y border-white/5 overflow-hidden relative group">
       <div className="mb-12 text-center container mx-auto px-4">
@@ -22,7 +23,7 @@ const Skills: React.FC = () => {
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap gap-24 md:hover:[animation-play-state:paused]"
+          className="flex whitespace-nowrap gap-16 md:hover:[animation-play-state:paused]"
         >
           {[...SKILLS, ...SKILLS].map((skill, i) => (
             <div key={`${skill}-${i}`} className="flex items-center gap-4 group/item cursor-default">
@@ -41,9 +42,9 @@ const Skills: React.FC = () => {
           initial={{ x: "-50%" }}
           animate={{ x: 0 }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap gap-24 md:hover:[animation-play-state:paused]"
+          className="flex whitespace-nowrap gap-16 md:hover:[animation-play-state:paused]"
         >
-          {[...[...SKILLS].reverse(), ...[...SKILLS].reverse()].map((skill, i) => (
+          {[...reversedSkills, ...reversedSkills].map((skill, i) => (
              <div key={`${skill}-r-${i}`} className="flex items-center gap-4 group/item cursor-default">
                <span className="text-5xl md:text-7xl font-bold font-syne text-gray-800 md:hover:text-cyan-400 transition-all duration-300 md:hover:scale-110 transform">
                  {skill}
