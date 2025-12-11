@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, Variants, useIsomorphicLayoutEffect } from 'framer-motion';
-import { ArrowUpRight, Award, FileText as CertificateIcon } from 'lucide-react';
+import { ArrowUpRight, FileText as CertificateIcon } from 'lucide-react';
 import { LibraryItem, Certificate } from '../../types';
 
 const cardVariants: Variants = {
@@ -61,7 +61,7 @@ const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
     }
   };
 
-  const link = item.type === 'project' ? item.link : (item.type === 'certificate' ? item.link : '#');
+  const link = item.link;
 
   const Tag = () => {
     let icon;
@@ -74,10 +74,6 @@ const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
         icon = <CertificateIcon size={12} className="mr-1.5" />;
         text = item.issuer;
         break;
-      case 'achievement':
-        icon = <Award size={12} className="mr-1.5" />;
-        text = item.award;
-        break;
     }
     return (
       <div className="absolute top-6 left-6 z-20">
@@ -89,6 +85,7 @@ const LibraryCard = ({ item, onCardClick }: LibraryCardProps) => {
   };
 
   const cursorStyle = isCertificateWithImage || item.type === 'project' ? 'cursor-pointer' : '';
+
 
   return (
     <motion.a
