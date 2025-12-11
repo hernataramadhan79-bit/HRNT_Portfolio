@@ -1,6 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SKILLS, SKILLS_DETAILED } from '../src/constants';
+import { Code, Brush, Server, Film, Bot } from 'lucide-react';
+
+const icons: { [key: string]: React.FC<any> } = {
+  "Frontend Development": Code,
+  "UI/UX Design": Brush,
+  "Backend Architecture": Server,
+  "Motion & Animation": Film,
+  "Web Developer": Bot,
+};
 
 const Skills: React.FC = () => {
   const reversedSkills = [...SKILLS].reverse();
@@ -55,38 +64,76 @@ const Skills: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Proficiency Graph */}
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-            {SKILLS_DETAILED.map((skill, index) => (
-              <motion.div 
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-syne mb-4">My Expertise</h2>
+          <p className="font-mono text-cyan-400 text-sm tracking-widest uppercase">A showcase of my abilities</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {SKILLS_DETAILED.map((skill, index) => {
+            const Icon = icons[skill.name];
+            const cardVariants = {
+              initial: { opacity: 0, y: 30 },
+              inView: { opacity: 1, y: 0, transition: { duration: 0.4, delay: index * 0.1, ease: 'easeOut' } },
+              hover: { scale: 1.05, y: -10 }
+            };
+            return (
+              <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={cardVariants}
+                initial="initial"
+                whileInView="inView"
+                whileHover="hover"
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group md:cursor-pointer"
+                className="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/80 shadow-lg backdrop-blur-sm group"
               >
-                <div className="flex justify-between items-end mb-2 md:group-hover:translate-x-2 transition-transform duration-300">
-                  <span className="font-syne font-medium text-lg text-gray-200 md:group-hover:text-cyan-300 transition-colors">{skill.name}</span>
-                  <span className="font-mono text-xs text-cyan-400 md:group-hover:text-white transition-colors">{skill.level}%</span>
+                <div className="flex justify-between items-center mb-4">
+                  <div className="flex items-center gap-4">
+                    {Icon && <Icon className="w-8 h-8 text-cyan-400" />}
+                    <span className="font-syne font-semibold text-xl text-slate-100">{skill.name}</span>
+                  </div>
+                  <span className="font-mono text-lg text-cyan-300">{skill.level}%</span>
                 </div>
-                <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden border border-transparent md:group-hover:border-white/10 transition-colors">
-                  <motion.div 
+                <div className="w-full h-2.5 bg-slate-700 rounded-full overflow-hidden">
+                  <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full md:group-hover:from-cyan-400 md:group-hover:to-purple-500 transition-all duration-500 shadow-[0_0_15px_rgba(34,211,238,0.3)] md:group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] relative"
+                    transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+                    className="h-full bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full group-hover:from-purple-400 group-hover:to-cyan-300 transition-colors duration-300 relative"
+                    style={{
+                      boxShadow: '0 0 8px rgba(56, 189, 248, 0.5), 0 0 16px rgba(168, 85, 247, 0.5)',
+                    }}
                   >
-                     <div className="absolute inset-0 bg-white/30 animate-pulse" />
+                    <motion.div 
+                      className="absolute inset-0 h-full rounded-full"
+                      style={{
+                        background: `linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)`,
+                        backgroundSize: '200% 100%',
+                      }}
+                      animate={{
+                        backgroundPosition: ['-200%', '200%']
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 1.5,
+                        ease: "linear",
+                      }}
+                    />
                   </motion.div>
                 </div>
               </motion.div>
-            ))}
+            )
+          })}
         </div>
       </div>
-
     </section>
   );
 };

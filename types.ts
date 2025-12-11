@@ -25,18 +25,7 @@ export interface Certificate {
   span: string;
 }
 
-export interface Achievement {
-  id: number;
-  type: 'achievement';
-  title: string;
-  award: string;
-  description: string;
-  image: string;
-  year: number;
-  span: string;
-}
-
-export type LibraryItem = Project | Certificate | Achievement;
+export type LibraryItem = Project | Certificate;
 
 export interface Skill {
   name: string;

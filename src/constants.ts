@@ -1,5 +1,5 @@
 import { Github, Linkedin, Instagram } from 'lucide-react';
-import { Project, Certificate, Achievement, LibraryItem, NavItem, SocialLink } from '../types';
+import { Project, Certificate, LibraryItem, NavItem, SocialLink } from '../types';
 
 // Import assets from src
 const oryonAiImage = new URL('./oryonai.png', import.meta.url).href; // Pastikan path dan nama file sudah benar
@@ -98,20 +98,7 @@ const CERTIFICATES: Certificate[] = [
   }
 ];
 
-const ACHIEVEMENTS: Achievement[] = [
-  {
-    id: 7,
-    type: 'achievement',
-    title: '1st Place Hackathon',
-    award: 'Innovatech 2023',
-    description: 'Led a team to victory by developing a novel solution for urban mobility using real-time data analytics.',
-    image: portfolioV1Image, // Re-using for placeholder
-    year: 2023,
-    span: 'md:col-span-2',
-  },
-];
-
-export const LIBRARY_ITEMS: LibraryItem[] = [...PROJECTS, ...CERTIFICATES, ...ACHIEVEMENTS];
+export const LIBRARY_ITEMS: LibraryItem[] = [...PROJECTS, ...CERTIFICATES];
 
 
 export const SKILLS: string[] = [

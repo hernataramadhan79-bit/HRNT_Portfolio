@@ -25,7 +25,7 @@ const App: React.FC = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   
   const { scrollY } = useScroll();
-  const { particles, onMouseMove } = useParticles(200, scrollY);
+  const { particles, onMouseMove } = useParticles(isDesktop ? 200 : 50, scrollY);
 
   useIsomorphicLayoutEffect(() => {
     const checkIsDesktop = () => setIsDesktop(window.innerWidth >= 768);
@@ -55,8 +55,8 @@ const App: React.FC = () => {
       onMouseMove={onMouseMove}
     >
       {isDesktop && <Cursor />}
-      <FluidBackground />
-      <GlobalAnimatedBackground />
+      {isDesktop && <FluidBackground />}
+      {isDesktop && <GlobalAnimatedBackground />}
       <ParticleBackground particles={particles} />
 
       <div className="relative z-10 flex flex-col">

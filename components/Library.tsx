@@ -4,13 +4,12 @@ import { LIBRARY_ITEMS } from '../src/constants';
 import LibraryCard from './ui/LibraryCard';
 import { LibraryItem } from '../types';
 
-type FilterType = 'all' | 'project' | 'certificate' | 'achievement';
+type FilterType = 'all' | 'project' | 'certificate';
 
 const FILTERS: { label: string; value: FilterType }[] = [
   { label: 'All', value: 'all' },
   { label: 'Projects', value: 'project' },
   { label: 'Certificates', value: 'certificate' },
-  { label: 'Achievements', value: 'achievement' },
 ];
 
 const Section = ({ title, items, onCardClick }: { title: string; items: LibraryItem[], onCardClick: (item: LibraryItem) => void }) => (
@@ -40,7 +39,6 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
 
   const projects = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'project'), []);
   const certificates = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'certificate'), []);
-  const achievements = useMemo(() => LIBRARY_ITEMS.filter(item => item.type === 'achievement'), []);
   
   return (
     <section id="library" className="py-32 relative z-10">
@@ -56,16 +54,16 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
               MY<br />COLLECTION
             </h2>
             <p className="font-mono text-sm text-cyan-400 mt-2">
-              A curated library of my projects, certifications, and achievements.
+              A curated library of my projects and certifications.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 gap-2 w-full rounded-2xl bg-black/20 p-2 backdrop-blur-sm border border-white/10 md:w-auto md:flex md:flex-wrap md:items-center md:rounded-full">
+          <div className="flex flex-wrap justify-center gap-2 w-full rounded-2xl bg-black/20 p-2 backdrop-blur-sm border border-white/10 md:w-auto md:rounded-full">
             {FILTERS.map((filter) => (
               <button
                 key={filter.value}
                 onClick={() => setActiveFilter(filter.value)}
-                className={`relative w-full md:w-auto rounded-full px-2 md:px-4 py-2 text-xs sm:text-sm font-mono transition-colors text-center ${
+                className={`relative rounded-full px-2 md:px-4 py-2 text-xs sm:text-sm font-mono transition-colors text-center ${
                   activeFilter === filter.value ? 'text-black' : 'text-gray-400 hover:text-white'
                 }`}
               >
@@ -87,7 +85,6 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
             <motion.div key="all-sections">
               <Section title="Projects" items={projects} onCardClick={onCardClick} />
               <Section title="Certificates" items={certificates} onCardClick={onCardClick} />
-              <Section title="Achievements" items={achievements} onCardClick={onCardClick} />
             </motion.div>
           )}
           {activeFilter === 'project' && (
@@ -100,13 +97,6 @@ const Library: React.FC<LibraryProps> = ({ onCardClick }) => {
           {activeFilter === 'certificate' && (
             <motion.div key="certificates" layout className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {certificates.map((item) => (
-                <LibraryCard key={item.id} item={item} onCardClick={onCardClick} />
-              ))}
-            </motion.div>
-          )}
-          {activeFilter === 'achievement' && (
-            <motion.div key="achievements" layout className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {achievements.map((item) => (
                 <LibraryCard key={item.id} item={item} onCardClick={onCardClick} />
               ))}
             </motion.div>
